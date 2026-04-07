@@ -1,9 +1,9 @@
 {
-  "name": "harness-kanban",
+  "name": "harness-kanban-testing",
   "dockerComposeFile": "docker-compose.yml",
   "service": "workspace",
   "runServices": ["workspace", "browser"],
-  "workspaceFolder": "/workspaces/harness-kanban",
+  "workspaceFolder": "/workspaces/harness-kanban-testing",
   "remoteUser": "node",
   "shutdownAction": "stopCompose",
   "postCreateCommand": "bash .devcontainer/scripts/setup-devcontainer.sh",
