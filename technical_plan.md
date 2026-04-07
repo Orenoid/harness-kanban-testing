@@ -25,9 +25,10 @@
   - 无部署、配置或运行时参数变更。
 
 ## Implementation Steps
-1. [ ] 新建用于 issue 10 的工作分支。
-2. [ ] 在仓库根目录新增 `technical_plan.md` 并记录本次规划。
-3. [ ] 提交并推送规划文档，创建草稿 PR 进入后续验证流程。
+1. [x] 新建用于 issue 10 的工作分支。
+2. [x] 在仓库根目录新增 `technical_plan.md` 并记录本次规划。
+3. [x] 提交并推送规划文档，创建草稿 PR 进入后续验证流程。
+4. [x] 修复 `validation-test.js` 中故意抛出的错误，确保验证脚本可通过。
 
 ## Review Checklist
 Before marking complete, verify all items from the project's Review Rules in AGENTS.md or equivalent guidance.
@@ -40,3 +41,4 @@ Before marking complete, verify all items from the project's Review Rules in AGE
 ## Notes
 - issue 10 明确指出计划和实现阶段无需做实际功能开发。
 - 后续若 PR 流程触发预期验证错误，将在实现阶段按错误信息进行针对性修复。
+- 实现阶段按预期遇到 `Intentional validation test error`，已将脚本改为正常退出。
