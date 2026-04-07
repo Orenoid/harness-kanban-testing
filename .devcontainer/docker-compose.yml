@@ -1,0 +1,28 @@
+name: harness-kanban
+
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sleep infinity
+    working_dir: /workspaces/harness-kanban
+    volumes:
+      - ..:/workspaces/harness-kanban:cached
+    env_file:
+      - ./workspace.env
+
+  browser:
+    image: lscr.io/linuxserver/chromium:latest
+    network_mode: 'service:workspace'
+    shm_size: '1gb'
+    restart: unless-stopped
+    env_file:
+      - ./browser.env
+    volumes:
+      - browser_config:/config
+    depends_on:
+      - workspace
+
+volumes:
+  browser_config:
