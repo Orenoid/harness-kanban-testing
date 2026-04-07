@@ -1,4 +1,4 @@
-name: harness-kanban
+name: harness-kanban-testing
 
 services:
   workspace:
@@ -6,9 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     command: sleep infinity
-    working_dir: /workspaces/harness-kanban
+    working_dir: /workspaces/harness-kanban-testing
     volumes:
-      - ..:/workspaces/harness-kanban:cached
+      - ..:/workspaces/harness-kanban-testing:cached
     env_file:
       - ./workspace.env
 
