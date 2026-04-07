@@ -97,8 +97,12 @@ main() {
   write_env_files
   ensure_workspace_node_modules_writable
 
-  echo "Installing workspace dependencies..."
-  pnpm_cmd install
+  if [[ -f package.json ]]; then
+    echo "Installing workspace dependencies..."
+    pnpm_cmd install
+  else
+    echo "Skipping dependency install because ${REPO_ROOT}/package.json does not exist."
+  fi
 
   echo "Devcontainer initialization complete."
 }
