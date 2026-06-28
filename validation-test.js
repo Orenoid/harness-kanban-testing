@@ -1,2 +1,9 @@
-// 用于验证系统 validation 功能：此处故意抛出错误。
-throw new Error("Intentional validation test error");
+const fs = require("fs");
+
+const readme = fs.readFileSync("README.md", "utf8").trimEnd();
+const lines = readme.split(/\r?\n/);
+const lastLine = lines[lines.length - 1];
+
+if (lastLine !== "Test") {
+  throw new Error('README.md must end with a line containing "Test".');
+}
